@@ -1,0 +1,68 @@
+touchevents =   2-1 : IF(LVAR 0 \=\= 0) 1 : \
+			    	  	TEXT(You found a key!) : \
+			    	  	ADDITEM(8, 1) : \
+			    	  	LVAR(0 += 1) : \
+			    	  ENDIF 1 : /\
+\
+		 	    2-7 : IF(LVAR 0 < 2) 1 : \
+		 	    	  	IF(LVAR 0 \=\= 1) 2 : \
+		 	    	  		ADDITEM(8, -1) : \
+		 	    	  		TEXT(You opened the door!) : \
+		 	    	  		LVAR(0 += 1) : \
+		 	    	  	ELSE(2) : \
+		 	    	  		TEXT(The door is closed. You need a key!) : \
+		 	    	  	ENDELSE 2 : /\
+		 	    	  ENDIF 1 : /\
+\
+				2-4 : IF(LVAR 1 \=\= 0) 1 : \
+					  	TEXT(Hello! Do you want me to build a bridge?) : \
+					  	CHOICE(1-Yes[LVAR(1 = 1)]_2-No[]) : \
+					  	REFRESH() : \
+					  	IF(LVAR 1 \=\= 1) 2 : \
+					  	  TEXT(Done!\n  Now you can cross the river!) : \
+					  	  REFRESH() : \
+					  	ELSE(2) : \
+					  	  TEXT(I see...) : \
+					  	  REFRESH() : \
+					  	ENDELSE 2 : \
+					  ENDIF 1 : \
+					  TEXT(See you later!) : /\
+\
+		 	    9-2 : TEXT(Technology is incredible!) : \
+		 	          REFRESH() : \
+		 	          TEXT(You can pretend to know what you're doing, when it's\n  actually the machine doing most of the work!) : /\
+\
+		 	    5-7 : LVAR(3 = 0) : \
+		 	    	  LOOP 1 : \
+		 	    	  	TEXT(This is a loop!) : \
+		 	    	  	LVAR(3 += 1) : \
+		 	    	  	REFRESH() : \
+		 	    	  	IF(LVAR 3 \=\= 2) 1 : \
+		 	    	  	  TEXT(After two loops, the cycle ends!) : \
+		 	    	  	  REFRESH() : \
+		 	    	  	ENDIF 1 : \
+		 	    	  WHEN(LVAR 3 < 2) 1 : \
+		 	    	  T-BATTLE(1) : /\
+
+
+runningevents = IF(LVAR 0 > 0) 1 : \
+				  CHANGE(2-1 .) : \
+				ENDIF 1 : \
+\
+				IF(LVAR 0 \=\= 2) 2 : \
+				  CHANGE(2-7 .) : \
+				ENDIF 2 : \
+\
+				IF(LVAR 1 \=\= 1) 3 : \
+				  CHANGE(10-5 \=) : \
+				  CHANGE(11-5 \=) : \
+				  CHANGE(12-5 \=) : \
+				  CHANGE(13-5 \=) : \
+				  CHANGE(14-5 \=) : \
+				  CHANGE(15-5 \=) : \
+				ENDIF 3 : \
+
+
+stepevents = 23-6 : MAP(1 5-3) /\
+\
+			 23-7 : MAP(1 5-4) /\

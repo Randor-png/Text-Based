@@ -1,0 +1,17 @@
+tiles = . WALK ;\
+		= WALK ;\
+		> WALK ;\
+		< WALK ;\
+		V WALK ;\
+		A WALK ;\
+		| STOP ;\
+		- STOP ;\
+		+ STOP ;\
+		& STOP ;\
+		v STOP ;\
+		S STOP ;\
+		I STOP ;\
+		/ THROUGH ;\
+		^ THROUGH ;\
+		\\\ THROUGH ;\
+		# SLIP ;\

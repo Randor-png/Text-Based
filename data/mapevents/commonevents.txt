@@ -1,0 +1,3 @@
+commonevents = TEXT(This is a common event.) : \
+			   REFRESH() : \
+			   TEXT(These events can be called in any map with\n  the command 'COMMONEVENT' and giving the row of\n  the Common Event you want to execute!) : ;\

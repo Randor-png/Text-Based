@@ -1,0 +1,8 @@
+touchevents = 8-1 : COMMONEVENT(0) : /\
+
+
+runningevents = /\
+
+
+stepevents = 4-3 : MAP(0 22-6) /\
+			 4-4 : MAP(0 22-7) /\
