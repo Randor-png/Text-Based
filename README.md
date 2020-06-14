@@ -1,2 +1,2 @@
 # Text-Based
-Text-Based Game Engine
+This is an Engine for a Text-Based Game.
